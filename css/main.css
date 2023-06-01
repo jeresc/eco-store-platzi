@@ -146,7 +146,7 @@ body {
   padding: 4px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 .main__product-section .product-section__healthcare .product-card h3, .main__product-section .product-section__furniture .product-card h3 {
   font-size: 1.7rem;
@@ -270,6 +270,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 40px;
+  padding-top: 20px;
 }
 
 @media (max-width: 1100px) {
@@ -336,11 +337,21 @@ body {
   }
   .main__product-section .product-section__healthcare .product-card, .main__product-section .product-section__furniture .product-card {
     width: 240px;
-    height: 440px;
-    justify-content: space-around;
+    height: 430px;
+    justify-content: space-evenly;
     margin-top: 6px;
     margin-bottom: 6px;
-    text-align: center;
+  }
+  .main__product-section .product-section__healthcare .product-card .product-card__icon svg, .main__product-section .product-section__furniture .product-card .product-card__icon svg {
+    height: 32px;
+    width: 32px;
+  }
+  .main__product-section .product-section__healthcare .product-card .product-card__image, .main__product-section .product-section__furniture .product-card .product-card__image {
+    width: 100%;
+    padding-top: 24px;
+  }
+  .main__product-section .product-section__healthcare .product-card .product-card__image img, .main__product-section .product-section__furniture .product-card .product-card__image img {
+    height: 250px;
   }
   .main__product-section .product-section__healthcare .product-card:nth-child(1), .main__product-section .product-section__furniture .product-card:nth-child(1) {
     margin-left: 22px;
