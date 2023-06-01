@@ -8,6 +8,20 @@ $p-size: 2.4rem;
 $layout-breakpoint-tablet: 770px;
 $layout-breakpoint-laptop: 1100px;
 
+@mixin flexCenter($direction, $content, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $align;
+}
+
+@mixin buttonStyle {
+  button {
+    background: none;
+    border-style: none;
+  }
+}
+
 html {
   font-size: 62.5%;
 }
@@ -20,9 +34,7 @@ body {
 
 .navbar {
   width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexCenter(row, space-between, center);
   color: $primary-text-color;
   margin: 0 auto;
   padding-top: 15px;
@@ -33,11 +45,7 @@ body {
   .navbar__icons {
     display: flex;
     gap: 15px;
-
-    button {
-      background: none;
-      border-style: none;
-    }
+    @include buttonStyle();
   }
 }
 
@@ -46,11 +54,9 @@ body {
   margin: 0 auto;
   width: 90%;
   article {
-    display: flex;
+    @include flexCenter(row, space-between, center);
     flex-wrap: wrap-reverse;
     padding-top: 40px;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
     .main__impact-section {
       display: flex;
@@ -72,9 +78,8 @@ body {
       font-size: $p-size;
       line-height: 3.25rem;
     }
+    @include buttonStyle();
     button {
-      background: none;
-      border-style: none;
       padding: 20px;
       border-radius: 25px;
       color: $primary-color;
@@ -163,9 +168,42 @@ body {
   .product-section__furniture {
     @extend .product-section__healthcare;
     padding-top: 60px;
+    padding-bottom: 60px;
     .product-card {
       background-color: $tertiary-color;
       color: white;
+    }
+  }
+}
+
+.info-section__about-us {
+  padding-bottom: 60px;
+  h2 {
+    font-weight: bold;
+    padding-bottom: 60px;
+    font-size: 3.2rem;
+  }
+  .about-us__mission-section {
+    @include flexCenter(row, space-between, center);
+    flex-wrap: wrap;
+    gap: 40px;
+    .mission__earth {
+      max-width: 450px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: $primary-text-color;
+      img {
+        object-fit: contain;
+      }
+      p {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+    }
+    .mission__innovation {
+      @extend .mission__earth;
     }
   }
 }
@@ -187,6 +225,19 @@ body {
       .product-card {
         width: 270px;
         height: 500px;
+      }
+    }
+  }
+  .info-section__about-us {
+    .about-us__mission-section {
+      .mission__earth {
+        max-width: 350px;
+        margin: 0 auto;
+        gap: 30px;
+        img {
+          height: 140px;
+          width: 140px;
+        }
       }
     }
   }
@@ -253,5 +304,9 @@ body {
         display: none;
       }
     }
+  }
+  .main__info-section {
+    width: 85%;
+    margin: 0 auto;
   }
 }
