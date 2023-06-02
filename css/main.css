@@ -171,8 +171,8 @@ body {
   padding-bottom: 60px;
 }
 .info-section__about-us h2 {
-  font-weight: bold;
-  padding-bottom: 60px;
+  font-weight: 500;
+  padding-bottom: 40px;
   font-size: 3.2rem;
 }
 .info-section__about-us .about-us__mission-section {
@@ -203,7 +203,7 @@ body {
   padding-bottom: 70px;
 }
 .info-section__gallery h2 {
-  font-weight: bold;
+  font-weight: 500;
   padding-bottom: 40px;
   font-size: 3.2rem;
 }
@@ -216,9 +216,8 @@ body {
   gap: 20px;
 }
 .info-section__gallery .gallery__images img {
-  min-width: 420px;
-  max-width: 33%;
-  max-height: 340px;
+  width: 31%;
+  height: 340px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -233,20 +232,29 @@ body {
 }
 
 .info-section__location {
-  color: #fa9500;
   padding-bottom: 60px;
 }
 .info-section__location h2 {
-  padding-bottom: 60px;
+  padding-bottom: 32px;
   color: #7c6a0a;
   font-size: 3.2rem;
+  font-weight: 600;
 }
 .info-section__location .location__map {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 60px;
+  padding-bottom: 40%;
+  position: relative;
+  overflow: hidden;
+}
+.info-section__location .location__map iframe {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  border-radius: 10px;
+}
+.info-section__location h3 {
+  padding-top: 30px;
 }
 .info-section__location h3,
 .info-section__location p {
@@ -292,6 +300,9 @@ body {
   .info-section__about-us .about-us__mission-section .mission__earth img, .info-section__about-us .about-us__mission-section .mission__innovation img {
     height: 140px;
     width: 140px;
+  }
+  .info-section__gallery .gallery__images img {
+    min-width: 30%;
   }
 }
 @media (max-width: 770px) {
@@ -369,8 +380,10 @@ body {
     width: 85%;
     margin: 0 auto;
   }
-  .info-section__location {
-    width: 85%;
-    margin: 0 auto;
+  .info-section__gallery .gallery__images img {
+    min-width: 100%;
+  }
+  .info-section__location .location__map {
+    padding-bottom: 400px;
   }
 }/*# sourceMappingURL=main.css.map */

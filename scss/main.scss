@@ -185,8 +185,8 @@ body {
 .info-section__about-us {
   padding-bottom: 60px;
   h2 {
-    font-weight: bold;
-    padding-bottom: 60px;
+    font-weight: 500;
+    padding-bottom: 40px;
     font-size: 3.2rem;
   }
   .about-us__mission-section {
@@ -216,7 +216,7 @@ body {
 .info-section__gallery {
   padding-bottom: 70px;
   h2 {
-    font-weight: bold;
+    font-weight: 500;
     padding-bottom: 40px;
     font-size: 3.2rem;
   }
@@ -225,9 +225,8 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     img {
-      min-width: 420px;
-      max-width: 33%;
-      max-height: 340px;
+      width: 31%;
+      height: 340px;
       object-fit: cover;
       object-position: center;
       border-radius: 16px;
@@ -242,16 +241,29 @@ body {
 }
 
 .info-section__location {
-  color: $quaternary-color;
   padding-bottom: 60px;
   h2 {
-    padding-bottom: 60px;
+    padding-bottom: 32px;
     color: $primary-text-color;
     font-size: 3.2rem;
+    font-weight: 600;
   }
   .location__map {
-    @include flexCenter(column, center, center);
-    padding-bottom: 60px;
+    padding-bottom: 40%;
+    position: relative;
+    overflow: hidden;
+    iframe {
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      position: absolute;
+      border-radius: 10px;
+    }
+  }
+
+  h3 {
+    padding-top: 30px;
   }
   h3,
   p {
@@ -306,6 +318,7 @@ body {
   .info-section__gallery {
     .gallery__images {
       img {
+        min-width: 30%;
       }
     }
   }
@@ -392,8 +405,16 @@ body {
     width: 85%;
     margin: 0 auto;
   }
+  .info-section__gallery {
+    .gallery__images {
+      img {
+        min-width: 100%;
+      }
+    }
+  }
   .info-section__location {
-    width: 85%;
-    margin: 0 auto;
+    .location__map {
+      padding-bottom: 400px;
+    }
   }
 }
